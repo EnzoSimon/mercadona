@@ -103,18 +103,19 @@ class ProductsController extends AbstractController
         if($productForm->isSubmitted() && $productForm->isValid()){
             // On récupère les images
             $images = $productForm->get('images')->getData();
+            dd($images);
 
-            foreach($images as $image){
-                // On définit le dossier de destination
-                $folder = 'products';
+            // foreach($images as $image){
+            //     // On définit le dossier de destination
+            //     $folder = 'products';
 
-                // On appelle le service d'ajout
-                $fichier = $pictureService->add($image, $folder, 300, 300);
+            //     // On appelle le service d'ajout
+            //     $fichier = $pictureService->add($image, $folder, 300, 300);
 
-                $img = new Images();
-                $img->setName($fichier);
-                $product->addImage($img);
-            }
+            //     $img = new Images();
+            //     $img->setName($fichier);
+            //     $product->addImage($img);
+            // }
             
             
             // On génère le slug
