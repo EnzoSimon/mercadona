@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Categories;
+use App\Form\CategoriesFormType;
 use App\Repository\CategoriesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
