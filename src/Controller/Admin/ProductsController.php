@@ -109,7 +109,7 @@ class ProductsController extends AbstractController
                 $folder = 'products';
 
                 // On appelle le service d'ajout
-                $fichier = $pictureService->add($image, $folder, 300, 300);
+                $fichier = $pictureService->add($image, $folder);
 
                 $img = new Images();
                 $img->setName($fichier);
