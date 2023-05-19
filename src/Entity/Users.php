@@ -54,12 +54,8 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $resetToken;
 
-    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Orders::class)]
-    private $orders;
-
     public function __construct()
     {
-        $this->orders = new ArrayCollection();
         $this->created_at = new \DateTimeImmutable();
     }
 
