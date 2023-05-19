@@ -86,12 +86,12 @@ class RegistrationController extends AbstractController
             $user = $usersRepository->find($payload['user_id']);
 
             //On vérifie que l'utilisateur existe et n'a pas encore activé son compte
-            if($user && !$user->getIsVerified()){
-                $user->setIsVerified(true);
-                $em->flush($user);
-                $this->addFlash('success', 'Utilisateur activé');
-                return $this->redirectToRoute('profile_index');
-            }
+            // if($user && !$user->getIsVerified()){
+            //     $user->setIsVerified(true);
+            //     $em->flush($user);
+            //     $this->addFlash('success', 'Utilisateur activé');
+            //     return $this->redirectToRoute('profile_index');
+            // }
         }
         // Ici un problème se pose dans le token
         $this->addFlash('danger', 'Le token est invalide ou a expiré');

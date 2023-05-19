@@ -48,8 +48,8 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'string', length: 150)]
     private $city;
 
-    #[ORM\Column(type: 'boolean')]
-    private $is_verified = false;
+    // #[ORM\Column(type: 'boolean')]
+    // private $is_verified = false;
 
     #[ORM\Column(type: 'string', length: 100, nullable: true)]
     private $resetToken;
@@ -193,17 +193,17 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getIsVerified(): ?bool
-    {
-        return $this->is_verified;
-    }
+    // public function getIsVerified(): ?bool
+    // {
+    //     return $this->is_verified;
+    // }
 
-    public function setIsVerified(bool $is_verified): self
-    {
-        $this->is_verified = $is_verified;
+    // public function setIsVerified(bool $is_verified): self
+    // {
+    //     $this->is_verified = $is_verified;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getResetToken(): ?string
     {
@@ -213,36 +213,6 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     public function setResetToken(?string $resetToken): self
     {
         $this->resetToken = $resetToken;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Orders[]
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Orders $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setUsers($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrder(Orders $order): self
-    {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getUsers() === $this) {
-                $order->setUsers(null);
-            }
-        }
 
         return $this;
     }
