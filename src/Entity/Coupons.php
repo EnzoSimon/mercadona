@@ -40,12 +40,8 @@ class Coupons
     #[ORM\JoinColumn(nullable: false)]
     private $coupons_types;
 
-    #[ORM\OneToMany(mappedBy: 'coupons', targetEntity: Orders::class)]
-    private $orders;
-
     public function __construct()
     {
-        $this->orders = new ArrayCollection();
         $this->created_at = new \DateTimeImmutable();
     }
 
@@ -134,36 +130,6 @@ class Coupons
     public function setCouponsTypes(?CouponsTypes $coupons_types): self
     {
         $this->coupons_types = $coupons_types;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Orders[]
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Orders $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setCoupons($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrder(Orders $order): self
-    {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getCoupons() === $this) {
-                $order->setCoupons(null);
-            }
-        }
 
         return $this;
     }
