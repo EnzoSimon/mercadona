@@ -108,10 +108,10 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_login');    
         }
 
-        if($user->getIsVerified()){
-            $this->addFlash('warning', 'Cet utilisateur est déjà activé');
-            return $this->redirectToRoute('profile_index');    
-        }
+        // if($user->getIsVerified()){
+        //     $this->addFlash('warning', 'Cet utilisateur est déjà activé');
+        //     return $this->redirectToRoute('profile_index');    
+        // }
 
         // On génère le JWT de l'utilisateur
         // On crée le Header
