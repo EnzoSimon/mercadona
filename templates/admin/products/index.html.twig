@@ -36,6 +36,9 @@
                                 <td>
                                     <a href="{{ path('admin_products_edit', {id: produit.id})}}" class="btn btn-success">Modifier</a>
                                 </td>
+                                <td>
+                                    <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-2">Supprimer</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
