@@ -146,10 +146,19 @@ class ProductsController extends AbstractController
     }
 
     #[Route('/suppression/{id}', name: 'delete')]
-    public function delete(Products $product): Response
+    public function delete(Products $product, EntityManagerInterface $em): Response
     {
         // On vérifie si l'utilisateur peut supprimer avec le Voter
         $this->denyAccessUnlessGranted('PRODUCT_DELETE', $product);
+
+        if (!$product) {
+            //On vérifie si le produit existe
+            throw $this->createNotFoundException('Produit inexistant ...');
+        }
+
+        // On stocke
+        $em->remove($product);
+        $em->flush();
 
         return $this->render('admin/products/index.html.twig');
     }
