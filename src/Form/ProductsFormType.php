@@ -51,7 +51,7 @@ class ProductsFormType extends AbstractType
                 'label' => false,
                 'multiple' => true,
                 'mapped' => false,
-                'required' => false,
+                'required' => true,
                 'constraints' => [
                     new All(
                         new Image([
@@ -63,7 +63,6 @@ class ProductsFormType extends AbstractType
             ])
         ;
 
-        // phpinfo();
     }
 
     public function configureOptions(OptionsResolver $resolver): void
