@@ -30,6 +30,7 @@ class ProductsController extends AbstractController
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
+        phpinfo();
         //On crée un "nouveau produit"
         $product = new Products();
 
