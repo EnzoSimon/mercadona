@@ -62,6 +62,8 @@ class ProductsFormType extends AbstractType
                 ]
             ])
         ;
+
+        phpinfo();
     }
 
     public function configureOptions(OptionsResolver $resolver): void
