@@ -63,4 +63,20 @@ class CategoriesController extends AbstractController
             'categorieForm' => $categorieForm->createView()
         ]);
     }
+
+    #[Route('/suppression/{id}', name: 'delete')]
+    public function delete(Categories $categorie, EntityManagerInterface $em): Response
+    {
+        // On vérifie si l'utilisateur peut supprimer avec le Voter
+        $this->denyAccessUnlessGranted('CATEGORIE_DELETE', $categorie);
+
+        // Supprimer le produit de la base de données
+        $em->remove($categorie);
+        $em->flush();
+
+        $this->addFlash('success', 'Catégorie supprimé avec succès');
+
+        // Rediriger vers la liste des produits ou une autre page appropriée
+        return $this->redirectToRoute('admin_categories_index');
+    }
 }

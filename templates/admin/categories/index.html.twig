@@ -21,16 +21,13 @@
                             <tr>
                                 <td>{{ categorie.id }}</td>
                                 <td>{{ categorie.name }}</td>
+                                <td>
                                 {% if categorie.products is not empty %}
-                                    <td>
-                                        <a href="#" class="btn btn-danger disabled">Supprimer</a>
-                                    </td>
+                                    <a href="#" class="btn btn-danger disabled">Supprimer</a>
                                 {% else %}
-                                    <td>
-                                        <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer</a>
-                                    </td>
+                                    <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer</a>
                                 {% endif %}
-                                
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
