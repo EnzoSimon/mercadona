@@ -45,6 +45,12 @@ class CategoriesController extends AbstractController
             $slug = $slugger->slug($categorie->getName());
             $categorie->setSlug($slug);
 
+            // Récupérer la valeur du champ parent_id
+            $parentId = $categorieForm->get('parent_id')->getData();
+
+            // Définir la valeur de parent_id pour l'entité Categories
+            $categorie->setParent($parentId);
+
             // On arrondit le prix 
             // $prix = $product->getPrice() * 100;
             // $product->setPrice($prix);
