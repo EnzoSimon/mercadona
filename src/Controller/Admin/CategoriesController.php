@@ -68,7 +68,7 @@ class CategoriesController extends AbstractController
     public function delete(Categories $categorie, EntityManagerInterface $em): Response
     {
         // On vérifie si l'utilisateur peut supprimer avec le Voter
-        $this->denyAccessUnlessGranted('CATEGORIE_DELETE', $categorie);
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', $categorie);
 
         // Supprimer le produit de la base de données
         $em->remove($categorie);
