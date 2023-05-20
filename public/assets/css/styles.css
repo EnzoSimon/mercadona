@@ -39,7 +39,7 @@ header {
   bottom: 0;
   right: 0;
   z-index: -99999;
-  transition: all .4s;
+  transition: all .25s;
 }
 
 .btn::before {
