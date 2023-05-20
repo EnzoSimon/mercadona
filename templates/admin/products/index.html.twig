@@ -23,10 +23,12 @@
                     <tbody>
                         {% for produit in produits %}
                             <tr>
-                                <td>{{ produit.id }}</td>
+                                <td>{{ produit.id }}</td>*
+                                <td>
                                 {% if produit.images is not empty %}
-                                    <td><img src="{{ asset('assets/uploads/products/mini/300x300-' ~ produit.images[0].name ) }}" alt="{{ produit.name }}" class="img-thumbnail"></td>
+                                    <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ produit.images[0].name ) }}" alt="{{ produit.name }}" class="img-thumbnail">
                                 {% endif %}
+                                </td>
                                 <td>{{ produit.name }}</td>
                                 <td>{{ produit.price / 100 }}</td>
                                 <td>{{ produit.stock }}</td>
