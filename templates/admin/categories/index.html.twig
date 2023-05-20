@@ -14,7 +14,6 @@
                             <th>ID</th>
                             <th>Nom</th>
                             <th>Parent</th>
-                            <th>Slug</th>
                             <th>Ordre</th>
                         </tr>
                     </thead>
@@ -28,7 +27,6 @@
                                         {{ categorie.parent.name }}
                                     {% endif %}
                                 </td>
-                                <td>{{ categorie.slug }}</td>
                                 <td>{{ categorie.categoryOrder }}</td>
                             </tr>
                         {% endfor %}
