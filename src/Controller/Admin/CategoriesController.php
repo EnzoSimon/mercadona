@@ -63,4 +63,13 @@ class CategoriesController extends AbstractController
             'categorieForm' => $categorieForm->createView()
         ]);
     }
+
+    #[Route('/suppression/{id}', name: 'delete')]
+    public function delete(Categories $categorie): Response
+    {
+        // On vérifie si l'utilisateur peut supprimer avec le Voter
+        $this->denyAccessUnlessGranted('PRODUCT_DELETE', $categorie);
+
+        return $this->render('admin/categories/index.html.twig');
+    }
 }
