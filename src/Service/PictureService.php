@@ -2,9 +2,6 @@
 
 namespace App\Service;
 
-use function imagecreatefrompng;
-use function imagecreatefromjpeg;
-use function imagecreatefromwebp;
 use Exception;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
