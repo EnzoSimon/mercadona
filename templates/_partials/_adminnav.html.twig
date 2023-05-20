@@ -4,9 +4,7 @@
             Catégories
         </div>
         <div class="card-body">
-            {% if category is not empty %}
-                <p><a href="{{ path('admin_categories_index') }}">Liste des catégories</a></p>
-            {% endif %}
+            <p><a href="{{ path('admin_categories_index') }}">Liste des catégories</a></p>
             <p><a href="{{ path('admin_categories_add') }}">Ajouter une catégorie</a></p>
         </div>
     </article>
@@ -15,9 +13,7 @@
             Produits
         </div>
         <div class="card-body">
-            {% if product is not empty %}
-                <p><a href="{{ path('admin_products_index') }}">Liste des produits</a></p>
-            {% endif %}
+            <p><a href="{{ path('admin_products_index') }}">Liste des produits</a></p>
             <p><a href="{{ path('admin_products_add') }}">Ajouter un produit</a></p>
         </div>
     </article>
