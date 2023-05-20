@@ -72,4 +72,5 @@ class CategoriesController extends AbstractController
 
         return $this->render('admin/categories/index.html.twig');
     }
+    
 }
