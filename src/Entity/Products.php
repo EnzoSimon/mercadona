@@ -24,7 +24,7 @@ class Products
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Le nom du produit ne peut pas être vide')]
     #[Assert\Length(
-        min: 8,
+        min: 6,
         max: 200,
         minMessage: 'Le titre doit faire au moins {{ limit }} caractères',
         maxMessage: 'Le titre ne doit pas faire plus de {{ limit }} caractères'
