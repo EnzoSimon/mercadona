@@ -24,6 +24,10 @@
                         {% for produit in produits %}
                             <tr>
                                 <td>{{ produit.id }}</td>
+                                <td>{{ produit.images[0].name }}</td>
+                                {# {% if produit.images is not null %}
+                                    <td><img src="{{ asset('assets/uploads/products/mini/300x300-' ~ produit.images[0].name ) }}" alt="{{ produit.name }}" class="img-thumbnail"></td>
+                                {% endif %} #}
                                 <td>{{ produit.name }}</td>
                                 <td>{{ produit.price / 100 }}</td>
                                 <td>{{ produit.stock }}</td>
