@@ -22,10 +22,7 @@ class CategoriesFormType extends AbstractType
             ->add('name', options:[
                 'id' => 'Numéro'
             ])
-            ->add('name')
-            ->add('name', options:[
-                'parent_id' => 'Numéro parent'
-            ]);
+            ->add('name');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

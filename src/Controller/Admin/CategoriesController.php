@@ -39,17 +39,10 @@ class CategoriesController extends AbstractController
 
         //On vérifie si le formulaire est soumis ET valide
         if($categorieForm->isSubmitted() && $categorieForm->isValid()){
-            // On récupère les images
 
             // On génère le slug
             $slug = $slugger->slug($categorie->getName());
             $categorie->setSlug($slug);
-
-            // Récupérer la valeur du champ parent_id
-            $parentId = $categorieForm->get('parent_id')->getData();
-
-            // Définir la valeur de parent_id pour l'entité Categories
-            $categorie->setParent($parentId);
 
             // On arrondit le prix 
             // $prix = $product->getPrice() * 100;
