@@ -32,6 +32,10 @@ header {
   touch-action: manipulation;
 }
 
+.btn-primary:hover {
+    background-color: transparent;
+}
+
 .btn-primary::after,
 .btn-primary::before {
   content: '';
