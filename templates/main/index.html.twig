@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <header>
+        <img src="assets/uploads/products/5fc93aedbe500e8f2cbd84f5f0243f74.webp" alt="header" class="img-header img-responsive">
+    <header>
     <main class="container">
         <section class="row">
             <div class="col-12">
-                <h1>Site e-commerce</h1>
-                <p>Bienvenue dans notre boutique</p>            
+                <h1>Mercadona</h1>
+                <p>Votre destination shopping incontournable.</p>            
             </div>
             {% for category in categories %}
                 {% if category.parent == null %}

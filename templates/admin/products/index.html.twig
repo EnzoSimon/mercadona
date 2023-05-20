@@ -23,7 +23,7 @@
                     <tbody>
                         {% for produit in produits %}
                             <tr>
-                                <td>{{ produit.id }}</td>*
+                                <td>{{ produit.id }}</td>
                                 <td>
                                 {% if produit.images is not empty %}
                                     <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ produit.images[0].name ) }}" alt="{{ produit.name }}" class="img-thumbnail">
