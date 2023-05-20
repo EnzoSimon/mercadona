@@ -22,7 +22,10 @@ class CategoriesFormType extends AbstractType
             ->add('name', options:[
                 'id' => 'Numéro'
             ])
-            ->add('name');
+            ->add('name')
+            ->add('parent_id', HiddenType::class, [
+                'required' => false, // Assurez-vous que le champ parent_id n'est pas requis
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
