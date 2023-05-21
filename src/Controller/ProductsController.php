@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Products;
-use App\Repository\ProductsRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,11 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductsController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(ProductsRepository $productsRepository): Response
+    public function index(ManagerRegistry $managerRegistry): Response
     {
-        $products = $productsRepository->findAll();
+        $entityManager = $managerRegistry->getManager();
+        $products = $entityManager->getRepository(Products::class)->findAll();
 
-        return $this->render('products/index.html.twig', $products);
+        return $this->render('products/index.html.twig', [
+            'products' => $products,
+        ]);
     }
 
     #[Route('/{slug}', name: 'details')]
