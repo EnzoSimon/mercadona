@@ -6,8 +6,12 @@ header {
     margin-bottom: 50px;
 }
 
-main {
+main.page {
     min-height: calc(100vh - 114px);
+}
+
+main.home-page {
+    min-height: calc(100vh - 464px);
 }
 
 .img-header {
