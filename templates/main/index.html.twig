@@ -10,6 +10,8 @@
                 <h1>Mercadona</h1>
                 <p>Votre destination shopping incontournable.</p>            
             </div>
+            {% if categories is not empty %}
+                <h2>Nos catégories.</h2>  
             {% for category in categories|slice(0, 3) %}
                 <div class="col-4">
                     <div class="card h-100">
@@ -41,6 +43,9 @@
                     </div>
                 </div> 
             {% endfor %}
+            {% else %}
+                <p>Nous n'avous plus de produits sur le site ...</p>  
+            {% endif %}
         </section>
     </main>
 {% endblock %}
