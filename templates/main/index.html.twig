@@ -35,7 +35,7 @@
                             {% endfor %}
 
                             
-                            <p class="card-field card-text">{{ count }} produit{{if count > 1 }}s{{ endif }}</p>
+                            <p class="card-field card-text">{{ count }} produit{% if count > 1 %}s{% endif %}</p>
                             <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a>
                         </div>
                     </div>
