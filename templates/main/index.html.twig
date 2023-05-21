@@ -30,6 +30,13 @@
                                         </article>
                                     </div>
                                 {% endfor %} #}
+                                {% set count = 0 %}
+                                {% for pdts in category.products %}
+                                    {% set count = count + 1 %}
+                                {% endfor %}
+
+                                
+                                <p class="card-field card-text">{{ pdts }} produits</p>
                                 <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a>
                             </div>
                         </div>
