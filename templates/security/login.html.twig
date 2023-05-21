@@ -4,10 +4,10 @@
 
 {% block body %}
     <main class="container">
-        <section class="container my-3 connection-block align-left">
+        <section class="container my-3 connection-block text-start">
             <div class="row">
                 <div class="col">
-                    <form method="post">
+                    <form method="post" class="connection-form">
                         {% if error %}
                             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}

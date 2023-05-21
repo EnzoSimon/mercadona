@@ -150,3 +150,8 @@ h4 {
 .block-categories {
     margin-bottom: 100px;
 }
+
+form.connection-form {
+    max-width: 500px;
+    margin: auto;
+}
