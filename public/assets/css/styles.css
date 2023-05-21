@@ -133,7 +133,7 @@ h4 {
 
 .card:hover {
     box-shadow: #e5e5e5 0px 0px 8px 2px;
-    scale: 1.1;
+    scale: 1.05;
 }
 
 .card-body {

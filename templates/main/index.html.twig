@@ -13,6 +13,7 @@
             <div class="block-categories">
             {% if categories is not empty %}
                 <h2>Nos 3 catégories à ne pas louper !</h2>  
+                <div class="d-flex">
                 {% for category in categories|slice(0, 3) %}
                     <div class="col-4">
                         <div class="card h-100">
@@ -44,9 +45,7 @@
                         </div>
                     </div> 
                 {% endfor %}
-                </div>
             {% else %}
-                <div class="block-categories">
                 <p>Nous n'avous plus de produits sur le site ...</p>  
             {% endif %}
             </div>
