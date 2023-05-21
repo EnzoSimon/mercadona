@@ -3,21 +3,25 @@
 {% block title %}Liste des produits{% endblock %}
 
 {% block body %}
-    <h1>Liste des produits</h1>
+    <main class="container">
+        <h1>Liste des produits</h1>
 
-    {% for product in products %}
-        <div class="col-3 mb-3">
-            <article class="card h-100">
-                {% if product.images is not empty %}
-                    <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
-                {% endif %}
-                <div class="card-body">
-                    <h2 class="card-field card-title">{{ product.name }}</h2>
-                    <p class="card-field card-text">{{ product.description }}</p>
-                    <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
-                </div>
-            </article>
+        <div class="d-flex">
+        {% for product in products %}
+            <div class="col-3 mb-3">
+                <article class="card h-100">
+                    {% if product.images is not empty %}
+                        <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <span class="card-field card-categorie">{{ product.categorie }}</span>
+                        <h2 class="card-field card-title">{{ product.name }}</h2>
+                        <p class="card-field card-text">{{ product.description }}</p>
+                        <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
+                    </div>
+                </article>
+            </div>
+        {% endfor %}
         </div>
-    {% endfor %}
-
+    </main>
 {% endblock %}
