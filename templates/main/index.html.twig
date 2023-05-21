@@ -11,7 +11,7 @@
                 <p>Votre destination shopping incontournable.</p>            
             </div>
             {% for category in categories %}
-                {% if category.parent !== null %}
+                {% if category.parent is not null %}
                     <div class="col-4">
                         <div class="card h-100">
                             <div class="card-body">
