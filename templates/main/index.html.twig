@@ -11,16 +11,27 @@
                 <p>Votre destination shopping incontournable.</p>            
             </div>
             {% for category in categories %}
-                {% if category.parent == null %}
-                    <div class="col-12">
-                        <h2>{{ category.name }}</h2>
-                    </div>
-                {% else %}
+                {% if category.parent !== null %}
                     <div class="col-4">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h3 class="card-title">{{ category.name }}</h3>
-                                <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a>
+                                {% for product in products.data %}
+                                    <div class="col-3 mb-3">
+                                        <article class="card h-100">
+                                            {% if product.images is not empty %}
+                                                <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
+                                            {% endif %}
+                                            <div class="card-body">
+                                                <h2 class="card-field card-title">{{ product.name }}</h2>
+                                                <p class="card-field card-text">{{ product.description }}</p>
+                                                <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
+                                                {# <a href="{{ path('products_details', {"slug": product.slug }) }}" class="btn btn-primary">Voir les détails</a> #}
+                                            </div>
+                                        </article>
+                                    </div>
+                                {% endfor %}
+                                {# <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a> #}
                             </div>
                         </div>
                     </div>    
