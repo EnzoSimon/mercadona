@@ -14,6 +14,13 @@ main.home-page {
     min-height: calc(100vh - 464px);
 }
 
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 15px;
+}
+
 .img-header {
     max-width: 100%;
     height: 100%
@@ -116,4 +123,27 @@ main.home-page {
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
+}
+
+.card {
+    border: none;
+    box-shadow: #e5e5e5 0px 0px 8px 2px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    box-shadow: #e5e5e5 0px 0px 8px 2px;
+    scale: 1.1;
+}
+
+.card-body {
+    padding: 1.5rem 1rem;
+}
+
+.card-body .btn {
+    margin: auto;
+}
+
+.block-categories {
+    margin-bottom: 100px;
 }
