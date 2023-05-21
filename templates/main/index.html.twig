@@ -10,42 +10,46 @@
                 <h1>Mercadona</h1>
                 <p>Votre destination shopping incontournable.</p>            
             </div>
+            <div class="block-categories">
             {% if categories is not empty %}
-                <h2>Nos catégories</h2>  
-            {% for category in categories|slice(0, 3) %}
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title">{{ category.name }}</h3>
-                            {# {% for product in products.data %}
-                                <div class="col-3 mb-3">
-                                    <article class="card h-100">
-                                        {% if product.images is not empty %}
-                                            <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
-                                        {% endif %}
-                                        <div class="card-body">
-                                            <h2 class="card-field card-title">{{ product.name }}</h2>
-                                            <p class="card-field card-text">{{ product.description }}</p>
-                                            <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
-                                        </div>
-                                    </article>
-                                </div>
-                            {% endfor %} #}
-                            {% set count = 0 %}
-                            {% for product in category.products %}
-                                {% set count = count + 1 %}
-                            {% endfor %}
+                <h2>Nos 3 catégories à ne pas louper !</h2>  
+                {% for category in categories|slice(0, 3) %}
+                    <div class="col-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ category.name }}</h3>
+                                {# {% for product in products.data %}
+                                    <div class="col-3 mb-3">
+                                        <article class="card h-100">
+                                            {% if product.images is not empty %}
+                                                <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
+                                            {% endif %}
+                                            <div class="card-body">
+                                                <h2 class="card-field card-title">{{ product.name }}</h2>
+                                                <p class="card-field card-text">{{ product.description }}</p>
+                                                <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                {% endfor %} #}
+                                {% set count = 0 %}
+                                {% for product in category.products %}
+                                    {% set count = count + 1 %}
+                                {% endfor %}
 
-                            
-                            <p class="card-field card-text">{{ count }} produit{% if count > 1 %}s{% endif %}</p>
-                            <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a>
+                                
+                                <p class="card-field card-text">{{ count }} produit{% if count > 1 %}s{% endif %}</p>
+                                <a href="{{ path('categories_list', {slug: category.slug}) }}" class="btn btn-primary">Voir les produits</a>
+                            </div>
                         </div>
-                    </div>
-                </div> 
-            {% endfor %}
+                    </div> 
+                {% endfor %}
+                </div>
             {% else %}
+                <div class="block-categories">
                 <p>Nous n'avous plus de produits sur le site ...</p>  
             {% endif %}
+            </div>
         </section>
     </main>
 {% endblock %}
