@@ -12,13 +12,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductsController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(Products $product, ProductsRepository $productsRepository): Response
+    public function index(ProductsRepository $productsRepository): Response
     {
         $products = $productsRepository->findAll();
 
-        return $this->render('products/index.html.twig', [
-            'products' => $products,
-        ]);
+        return $this->render('products/index.html.twig', $products);
     }
 
     #[Route('/{slug}', name: 'details')]
