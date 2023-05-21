@@ -14,7 +14,6 @@
                         <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
                     {% endif %}
                     <div class="card-body">
-                        <span class="card-field card-categorie">{{ product.category }}</span>
                         <h2 class="card-field card-title">{{ product.name }}</h2>
                         <p class="card-field card-text">{{ product.description }}</p>
                         <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
