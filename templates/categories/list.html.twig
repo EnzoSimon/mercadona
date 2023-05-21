@@ -8,6 +8,7 @@
             <div class="col-12">
                 <h1>Liste des produits de la catégorie {{ category.name }}</h1>
             </div>
+            <div class="m-auto">
             {% for product in products.data %}
                 <div class="col-3 mb-3">
                     <article class="card h-100">
@@ -23,6 +24,7 @@
                     </article>
                 </div>
             {% endfor %}
+            </div>
             {% set path = 'categories_list' %}
             {% set slug = category.slug %}
             {% set pages = products.pages %}
