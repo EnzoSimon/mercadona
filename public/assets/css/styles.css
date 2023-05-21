@@ -17,8 +17,18 @@ header {
 }
 
 .btn-primary:hover {
-    background-color: #c38e09;
-    border-color: #89650b;
+    background-color: #d99f0d;
+    border-color: #d99f0d;
+}
+
+.btn-secondary {
+    background: #957d41;
+    border-color: #957d41;
+}
+
+.btn-secondary:hover {
+    background: #7e6831;
+    border-color: #7e6831;
 }
 
 .card .btn-primary {
