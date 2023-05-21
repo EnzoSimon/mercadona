@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Liste des produits</h1>
 
-    {% for product in products.data %}
+    {% for product in products %}
         <div class="col-3 mb-3">
             <article class="card h-100">
                 {% if product.images is not empty %}
@@ -19,5 +19,5 @@
             </article>
         </div>
     {% endfor %}
-    
+
 {% endblock %}
