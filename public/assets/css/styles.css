@@ -20,10 +20,10 @@ header {
   width: 100px;
   height: 30px;
   font-size: 16px;
-  background: #fbba16;
+  background: transparent;
   border: none;
   position: relative;
-  color: #ffffff;
+  color: #f0f0f0;
   cursor: pointer;
   z-index: 1;
   padding: 10px 20px;
@@ -54,6 +54,7 @@ header {
   transform: translate(0%, 0%);
   width: 100%;
   height: 100%;
+  background: #fbba16;
   border-radius: 10px;
 }
 
