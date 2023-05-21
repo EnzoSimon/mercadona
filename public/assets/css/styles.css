@@ -6,11 +6,11 @@ header {
     margin-bottom: 50px;
 }
 
-main.page {
+body.page main {
     min-height: calc(100vh - 114px);
 }
 
-main.home-page {
+body.home-page main {
     min-height: calc(100vh - 464px);
 }
 
@@ -98,6 +98,7 @@ h4 {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border-radius: 50px;
+  opacity: 0;
 }
 
 .card .btn-primary:hover::before {
@@ -111,6 +112,7 @@ h4 {
   transform: translate(0, 0);
   width: 100%;
   height: 100%;
+  opacity: 1;
 }
 
 .card .btn-primary:active::after {
