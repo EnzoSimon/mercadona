@@ -11,9 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductsController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(Products $product): Response
+    public function index(Products $products): Response
     {
-        return $this->render('products/index.html.twig', compact('product'));
+        return $this->render('products/index.html.twig', compact('products'));
     }
 
     #[Route('/{slug}', name: 'details')]
