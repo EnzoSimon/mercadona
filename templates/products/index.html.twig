@@ -6,7 +6,7 @@
     <main class="container">
         <h1>Liste des produits</h1>
 
-        <form method="GET" action="{{ path('products_index') }}">
+        <form method="GET" action="{{ path('products_index') }}" class="categorie-list">
             <div class="form-group">
                 <label for="category">Trier par catégorie :</label>
                 <select name="category" id="category" class="form-control">
@@ -21,30 +21,32 @@
 
         <div class="row justify-content-center">
             {% for product in products %}
-                {% set promotion = null %}
-                {% for promo in promotions %}
-                    {# {% if promo.product.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %} #}
-                    {% if promo.product.id == product.id %}
-                        {% set promotion = promo %}
-                    {% endif %}
-                {% endfor %}
-                
-                <div class="col-3 mb-3">
-                    <article class="card {% if promotion is not empty %}promo{% endif %} h-100">
-                        {% if product.images is not empty %}
-                            <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
+                {% if product.category == selectedCategory %}
+                    {% set promotion = null %}
+                    {% for promo in promotions %}
+                        {# {% if promo.product.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %} #}
+                        {% if promo.product.id == product.id %}
+                            {% set promotion = promo %}
                         {% endif %}
-                        <div class="card-body">
-                            <h2 class="card-field card-title">{{ product.name }}</h2>
-                            <p class="card-field card-text">{{ product.description }}</p>
-                            {% if promotion is not empty %}
-                                <p class="card-field card-price">Prix : <s>{{ product.price }}</s> &#x2794; <span>{{ product.price - (product.price * promotion.discount / 100) }}€ (-{{ promotion.discount }}%)</span></p>
-                            {% else %}
-                                <p class="card-field card-price">Prix : {{ product.price }}€</p>
+                    {% endfor %}
+                    
+                    <div class="col-3 mb-3">
+                        <article class="card {% if promotion is not empty %}promo{% endif %} h-100">
+                            {% if product.images is not empty %}
+                                <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
                             {% endif %}
-                        </div>
-                    </article>
-                </div>
+                            <div class="card-body">
+                                <h2 class="card-field card-title">{{ product.name }}</h2>
+                                <p class="card-field card-text">{{ product.description }}</p>
+                                {% if promotion is not empty %}
+                                    <p class="card-field card-price">Prix : <s>{{ product.price }}</s> &#x2794; <span>{{ product.price - (product.price * promotion.discount / 100) }}€ (-{{ promotion.discount }}%)</span></p>
+                                {% else %}
+                                    <p class="card-field card-price">Prix : {{ product.price }}€</p>
+                                {% endif %}
+                            </div>
+                        </article>
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     </main>
