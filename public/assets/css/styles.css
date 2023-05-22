@@ -160,3 +160,7 @@ form.connection-form {
     max-width: 500px;
     margin: auto;
 }
+
+.admin-nav .card {
+    min-width: 230px;
+}
