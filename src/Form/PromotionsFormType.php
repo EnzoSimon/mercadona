@@ -33,6 +33,7 @@ class PromotionsFormType extends AbstractType
             ->add('start_date', null, [
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
                 'constraints' => [
                     new Date([
                         'message' => 'La date de début n\'est pas valide',
@@ -45,6 +46,7 @@ class PromotionsFormType extends AbstractType
             ->add('end_date', null, [
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
                 'constraints' => [
                     new Date([
                         'message' => 'La date de fin n\'est pas valide',
