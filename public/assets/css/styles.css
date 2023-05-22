@@ -149,9 +149,29 @@ h4 {
     margin: auto;
 }
 
+.card.promo {
+    background-color: #fffbdd;
+}
+
 .card.promo .card-price span {
     font-weight: bold;
-    color: red;
+    color: #da3030;
+}
+
+.card.promo .card-body {
+    position: relative;
+}
+
+.card.promo .card-body::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-image: url('../icons/promo-icon.png');
+    top: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .block-categories {
@@ -183,6 +203,10 @@ form.connection-form {
     border-right: none;
 }
 
+.admin tr:last-child {
+    border-style: none;
+}
+
 .admin-nav {
     display: flex;
     justify-content: center;
@@ -195,4 +219,20 @@ form.connection-form {
 
 .admin-nav a:hover {
     color: #1e6148;
+}
+
+.categorie-list {
+    max-width: 230px;
+    margin-left: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.categorie-list select{
+    border-radius: 10px 0 0 10px;
+}
+
+.categorie-list .btn{
+    border-radius: 0 10px 10px 0;
 }
