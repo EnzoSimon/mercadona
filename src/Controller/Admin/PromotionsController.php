@@ -5,9 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Images;
 use App\Entity\Products;
 use App\Entity\Promotions;
-use App\Entity\PromotionsFormType;
+use App\Form\PromotionsFormType;
 use App\Form\ProductsFormType;
-use App\Form\PromotionsFormType as FormPromotionsFormType;
 use App\Repository\ProductsRepository;
 use App\Repository\PromotionsRepository;
 use App\Service\PictureService;
@@ -29,7 +28,7 @@ class PromotionsController extends AbstractController
         return $this->render('admin/products/index.html.twig', compact('produits'));
     }
 
-    #[Route('/add/{id}', name: 'add')]
+    #[Route('/ajout/{id}', name: 'ajout')]
     public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
@@ -38,7 +37,7 @@ class PromotionsController extends AbstractController
         $promotion = new Promotions();
 
         // On crée le formulaire
-        $promotionForm = $this->createForm(FormPromotionsFormType::class, $promotion);
+        $promotionForm = $this->createForm(PromotionsFormType::class, $promotion);
 
         // On traite la requête du formulaire
         $promotionForm->handleRequest($request);
