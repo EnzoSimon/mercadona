@@ -41,8 +41,7 @@ class PromotionsFormType extends AbstractType
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
