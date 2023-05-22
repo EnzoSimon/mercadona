@@ -131,6 +131,8 @@ h4 {
 .card {
     border: none;
     box-shadow: #e5e5e5 0px 0px 8px 2px;
+    border-radius: 1.5rem;
+    overflow: hidden;
     transition: 0.2s;
 }
 
@@ -173,6 +175,7 @@ form.connection-form {
 .admin th,
 .admin td {
     border-right: solid 1px #a7a7a7;
+    vertical-align: middle;
 }
 
 .admin th:last-child,
@@ -185,11 +188,11 @@ form.connection-form {
     justify-content: center;
 }
 
-.admin-nav {
+.admin-nav a {
     color: #29b782;
     transition: 0.3s;
 }
 
-.admin-nav:hover {
+.admin-nav a:hover {
     color: #1e6148;
 }
