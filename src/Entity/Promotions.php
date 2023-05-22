@@ -7,7 +7,7 @@ use App\Entity\Trait\SlugTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\DBAL\Types\Types;
 
-#[ORM\Entity(repositoryClass: PromotionsRepository::class)]
+#[ORM\Entity(repositoryClass: PromotionRepository::class)]
 class Promotions
 {
     use CreatedAtTrait;
