@@ -60,10 +60,6 @@ class ProductsController extends AbstractController
             $slug = $slugger->slug($product->getName());
             $product->setSlug($slug);
 
-            // On arrondit le prix 
-            // $prix = $product->getPrice() * 100;
-            // $product->setPrice($prix);
-
             // On stocke
             $em->persist($product);
             $em->flush();
