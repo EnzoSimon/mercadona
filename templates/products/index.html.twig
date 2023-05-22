@@ -24,7 +24,7 @@
                 {% set discount = null %}
                 {% if selectedCategory is empty or product.categories.id == selectedCategory %}
                     {% for promotion in promotions %}
-                        {% if promotion.startDate <= now|date('Y-m-d') and promotion.endDate >= now|date('Y-m-d') and promotion.product.id == product.id %}
+                        {% if promotion.startDate <= 'now'|date('Y-m-d') and promotion.endDate >= 'now'|date('Y-m-d') and promotion.product.id == product.id %}
                             {% set discount = promotion %}
                         {% endif %}
                     {% endfor %}
