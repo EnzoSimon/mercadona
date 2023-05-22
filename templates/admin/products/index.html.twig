@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             {% include "_partials/_adminnav.html.twig" %}
-            <main class="col-9 border border-light bg-white p-2">
+            <main class="col-12 border border-light bg-white p-2">
                 <h1>Liste des produits</h1>
                 <table class="table">
                     <thead>
@@ -35,11 +35,7 @@
                                 <td>{{ produit.categories.name }}</td>
                                 <td>
                                     <a href="{{ path('admin_products_edit', {id: produit.id})}}" class="btn btn-success">Modifier</a>
-                                </td>
-                                <td>
                                     <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer</a>
-                                </td>
-                                <td>
                                     <a href="{{ path('admin_promotion_ajout', {id: produit.id})}}" class="btn btn-warning">Promotion</a>
                                 </td>
                             </tr>

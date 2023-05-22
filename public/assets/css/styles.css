@@ -164,3 +164,7 @@ form.connection-form {
 .admin-nav .card {
     min-width: 230px;
 }
+
+.admin-nav th {
+    text-align: center;
+}
