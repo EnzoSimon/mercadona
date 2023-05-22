@@ -184,3 +184,12 @@ form.connection-form {
     display: flex;
     justify-content: center;
 }
+
+.admin-nav {
+    color: #29b782;
+    transition: 0.3s;
+}
+
+.admin-nav:hover {
+    color: #1e6148;
+}
