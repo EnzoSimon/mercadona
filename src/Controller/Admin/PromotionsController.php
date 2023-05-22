@@ -27,7 +27,7 @@ class PromotionsController extends AbstractController
         return $this->render('admin/products/index.html.twig', compact('produits'));
     }
 
-    #[Route('/promotion_add', name: 'promotion_add')]
+    #[Route('/promotion_add/{id}', name: 'promotion_add')]
     public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
