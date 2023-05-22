@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints\LessThan;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\GreaterThan;
+use App\Form\DateTransformer;
 
 class PromotionsFormType extends AbstractType
 {
@@ -30,7 +31,7 @@ class PromotionsFormType extends AbstractType
                     ]),
                 ]
             ])
-            ->add('start_date', null, [
+            ->add('start_date', DateType::class, [
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
@@ -43,7 +44,7 @@ class PromotionsFormType extends AbstractType
                     ])
                 ],
             ])
-            ->add('end_date', null, [
+            ->add('end_date', DateType::class, [
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
