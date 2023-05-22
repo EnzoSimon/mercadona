@@ -23,10 +23,10 @@ class Promotions
     private $product;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $start_date = null;
+    private ?\DateTime $start_date = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $end_date = null;
+    private ?\DateTime $end_date = null;
 
     #[ORM\Column(type: 'integer')]
     private $discount;
@@ -53,24 +53,24 @@ class Promotions
         return $this;
     }
 
-    public function getStartDate(): ?\DateTimeInterface
+    public function getStartDate(): ?\DateTime
     {
         return $this->start_date;
     }
 
-    public function setStartDate(\DateTimeInterface $start_date): self
+    public function setStartDate(\DateTime $start_date): self
     {
         $this->start_date = $start_date;
 
         return $this;
     }
 
-    public function getEndDate(): ?\DateTimeInterface
+    public function getEndDate(): ?\DateTime
     {
         return $this->end_date;
     }
 
-    public function setEndDate(\DateTimeInterface $end_date): self
+    public function setEndDate(\DateTime $end_date): self
     {
         $this->end_date = $end_date;
 
