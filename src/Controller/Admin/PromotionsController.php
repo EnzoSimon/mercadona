@@ -29,7 +29,7 @@ class PromotionsController extends AbstractController
     }
 
     #[Route('/ajout/{id}', name: 'ajout')]
-    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
+    public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService, Products $product): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
@@ -45,6 +45,8 @@ class PromotionsController extends AbstractController
         //On vérifie si le formulaire est soumis ET valide
         if($promotionForm->isSubmitted() && $promotionForm->isValid()){
             
+            $promotion->setProduct($product);
+
             // On génère le slug
             $slug = $slugger->slug($promotion->getDiscount());
             $promotion->setSlug($slug);
