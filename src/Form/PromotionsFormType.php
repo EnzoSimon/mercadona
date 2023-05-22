@@ -36,32 +36,13 @@ class PromotionsFormType extends AbstractType
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
-                'constraints' => [
-                    new Date([
-                        'message' => 'La date de début n\'est pas valide',
-                    ]),
-                    new NotBlank([
-                        'message' => 'La date de début est requise',
-                    ])
-                ],
             ])
             ->add('end_date', DateType::class, [
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
-                'constraints' => [
-                    new Date([
-                        'message' => 'La date de fin n\'est pas valide',
-                    ]),
-                    new NotBlank([
-                        'message' => 'La date de fin est requise',
-                    ]),
-                    new GreaterThan([
-                        'propertyPath' => 'parent.all[start_date].data',
-                        'message' => 'La date de fin doit être supérieure à la date de début',
-                    ])
-                ],
-            ]);
+            ])
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
