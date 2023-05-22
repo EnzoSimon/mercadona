@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints\LessThan;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\GreaterThan;
-use App\Form\DateTransformer;
+use App\Form\DateType;
 
 class PromotionsFormType extends AbstractType
 {
