@@ -64,7 +64,7 @@ class PromotionsController extends AbstractController
         //     'promotionForm' => $promotionForm->createView()
         // ]);
 
-        return $this->renderForm('admin/products/add.html.twig', compact('promotionForm'));
+        return $this->renderForm('admin/products/promotions/add.html.twig', compact('promotionForm'));
         // ['promotionForm' => $promotionForm]
     }
 
