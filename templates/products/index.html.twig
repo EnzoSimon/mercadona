@@ -21,7 +21,7 @@
 
         <div class="row justify-content-center">
             {% for product in products %}
-                {% if product.categories == selectedCategory or selectedCategory == "all" %}
+                {% if product.categories == selectedCategory and selectedCategory == "all" %}
                     {% set promotion = null %}
                     {% for promo in promotions %}
                         {# {% if promo.product.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %} #}
