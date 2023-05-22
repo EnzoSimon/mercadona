@@ -10,7 +10,7 @@
             <div class="form-group">
                 <label for="category">Trier par catégorie :</label>
                 <select name="category" id="category" class="form-control">
-                    <option value="">Toutes les catégories</option>
+                    <option value="all">Toutes les catégories</option>
                     {% for category in categories %}
                         <option value="{{ category.id }}" {% if selectedCategory == category.id %}selected{% endif %}>{{ category.name }}</option>
                     {% endfor %}
@@ -21,7 +21,7 @@
 
         <div class="row justify-content-center">
             {% for product in products %}
-                {% if product.categories == selectedCategory %}
+                {% if product.categories == selectedCategory || selectedCategory == "all" %}
                     {% set promotion = null %}
                     {% for promo in promotions %}
                         {# {% if promo.product.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %} #}
