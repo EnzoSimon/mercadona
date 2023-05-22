@@ -161,21 +161,26 @@ form.connection-form {
     margin: auto;
 }
 
-.admin-nav .card {
+.admin .card {
     min-width: 230px;
     margin: 15px;
 }
 
-.admin-nav th {
+.admin th {
     text-align: center;
 }
 
-.admin-nav th,
-.admin-nav td {
+.admin th,
+.admin td {
     border-right: solid 1px #a7a7a7;
 }
 
-.admin-nav th:last-child,
-.admin-nav td:last-child {
+.admin th:last-child,
+.admin td:last-child {
     border-right: none;
+}
+
+.admin-nav {
+    display: flex;
+    justify-content: center;
 }
