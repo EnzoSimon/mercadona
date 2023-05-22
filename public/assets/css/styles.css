@@ -33,10 +33,13 @@ body.home-page main {
 }
 
 h1,
-h2,
 h3,
 h4 {
     margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 25px;
 }
 
 .img-header {
@@ -151,7 +154,7 @@ h4 {
     box-shadow: #e5e5e5 0px 0px 8px 2px;
     border-radius: 1.5rem;
     overflow: hidden;
-    transition: 0.2s;
+    transition: 0.1s;
 }
 
 .card:hover {
@@ -169,6 +172,11 @@ h4 {
 
 .card.promo {
     background-color: #fffce6;
+}
+
+.card .card-price {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 15px;
 }
 
 .card.promo .card-price span {
@@ -192,17 +200,21 @@ h4 {
     top: 5px;
     left: 5px;
     z-index: 1;
-    transition: 0.3s
+    transition: 0.25s
 }
 
 .card.promo:hover::before {
     left: 15px;
-    transform: rotate(30deg);
+    transform: rotate(20deg);
     scale: 1.1;
 }
 
 .block-categories {
     margin-bottom: 100px;
+}
+
+.block-categories .card-body {
+    padding: 3.5rem 1rem;
 }
 
 form.connection-form {
