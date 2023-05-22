@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Coupons;
+use App\Entity\Promotions;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -12,11 +12,11 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method Coupons[]    findAll()
  * @method Coupons[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CouponsRepository extends ServiceEntityRepository
+class PromotionsRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Coupons::class);
+        parent::__construct($registry, Promotions::class);
     }
 
     // /**

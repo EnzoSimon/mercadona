@@ -39,6 +39,9 @@
                                 <td>
                                     <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer</a>
                                 </td>
+                                <td>
+                                    <a href="{{ path('admin_products_promotion_add', {id: produit.id})}}" class="btn btn-warning">Promotion</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
