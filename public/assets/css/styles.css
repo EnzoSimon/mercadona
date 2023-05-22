@@ -147,7 +147,7 @@ h4 {
     margin: auto;
 }
 
-.card.promo .card-price {
+.card.promo .card-price span {
     font-weight: bold;
     color: red;
 }
