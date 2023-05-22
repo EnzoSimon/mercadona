@@ -168,3 +168,13 @@ form.connection-form {
 .admin-nav th {
     text-align: center;
 }
+
+.admin-nav th,
+.admin-nav td {
+    border-right: solid 1px #a7a7a7;
+}
+
+.admin-nav th:last-child,
+.admin-nav td:last-child {
+    border-right: none;
+}
