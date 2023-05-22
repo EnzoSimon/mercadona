@@ -18,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
 #[Route('/admin/produits', name: 'admin_products_')]
-class ProductsController extends AbstractController
+class PromotionsController extends AbstractController
 {
     #[Route('/', name: 'index')]
     public function index(ProductsRepository $productsRepository): Response
