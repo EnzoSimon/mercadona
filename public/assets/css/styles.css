@@ -1,3 +1,21 @@
+::-webkit-scrollbar-track
+{
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #fbba16;
+}
+
 header {
     max-height: 350px;
     overflow: hidden;
@@ -150,7 +168,7 @@ h4 {
 }
 
 .card.promo {
-    background-color: #fffbdd;
+    background-color: #fffce6;
 }
 
 .card.promo .card-price span {
@@ -171,8 +189,8 @@ h4 {
     background-image: url('../icons/promo-icon.png');
     background-position: center;
     background-size: contain;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
     z-index: 1;
 }
 
