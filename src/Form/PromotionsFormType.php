@@ -36,7 +36,7 @@ class PromotionsFormType extends AbstractType
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
-                'attr' => ['class' => 'form-control'],
+                'input'  => 'datetime_immutable',
                 'constraints' => [
                     new Date([
                         'message' => 'La date de début n\'est pas valide',
@@ -50,6 +50,7 @@ class PromotionsFormType extends AbstractType
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
+                'input'  => 'datetime_immutable',
                 'constraints' => [
                     new Date([
                         'message' => 'La date de fin n\'est pas valide',
