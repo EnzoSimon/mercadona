@@ -36,6 +36,7 @@ class PromotionsFormType extends AbstractType
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
+                'attr' => ['class' => 'form-control'],
                 'constraints' => [
                     new Date([
                         'message' => 'La date de début n\'est pas valide',
@@ -62,9 +63,6 @@ class PromotionsFormType extends AbstractType
                     ])
                 ],
             ]);
-
-        ;
-
     }
 
     public function configureOptions(OptionsResolver $resolver): void
