@@ -6,8 +6,6 @@ use App\Entity\Images;
 use App\Entity\Products;
 use App\Entity\Promotions;
 use App\Entity\PromotionsFormType;
-use App\Form\ProductsFormType;
-use App\Form\PromotionsFormType as FormPromotionsFormType;
 use App\Repository\ProductsRepository;
 use App\Repository\PromotionsRepository;
 use App\Service\PictureService;
@@ -29,7 +27,7 @@ class ProductsController extends AbstractController
         return $this->render('admin/products/index.html.twig', compact('produits'));
     }
 
-    #[Route('/promotion_add', name: 'add')]
+    #[Route('/promotion_add', name: 'promotion_add')]
     public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
