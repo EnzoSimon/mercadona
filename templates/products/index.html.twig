@@ -25,7 +25,7 @@
                             <h2 class="card-field card-title">{{ product.name }}</h2>
                             <p class="card-field card-text">{{ product.description }}</p>
                             {% if promotion is not empty %}
-                                <p class="card-field card-price">Prix : {{ product.price - (product.price * promotion.discount / 100) }}€ (-{{ promotion.pourcentage }}%)</p>
+                                <p class="card-field card-price">Prix : {{ product.price - (product.price * promotion.discount / 100) }}€ (-{{ promotion.discount }}%)</p>
                             {% endif %}
                         </div>
                     </article>
