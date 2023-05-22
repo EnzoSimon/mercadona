@@ -7,6 +7,7 @@ use App\Entity\Products;
 use App\Entity\Promotions;
 use App\Entity\PromotionsFormType;
 use App\Form\ProductsFormType;
+use App\Form\PromotionsFormType as FormPromotionsFormType;
 use App\Repository\ProductsRepository;
 use App\Repository\PromotionsRepository;
 use App\Service\PictureService;

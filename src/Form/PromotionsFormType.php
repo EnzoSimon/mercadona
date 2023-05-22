@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Products;
+use App\Entity\Promotions;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -12,7 +13,7 @@ use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\GreaterThan;
 
-class ProductsFormType extends AbstractType
+class PromotionsFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -63,7 +64,7 @@ class ProductsFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Products::class,
+            'data_class' => Promotions::class,
         ]);
     }
 }
