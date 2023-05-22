@@ -158,20 +158,22 @@ h4 {
     color: #da3030;
 }
 
-.card.promo .card-body {
+.card.promo {
     position: relative;
 }
 
-.card.promo .card-body::before {
+.card.promo::before {
     content: '';
     display: block;
     position: absolute;
     width: 25px;
     height: 25px;
     background-image: url('../icons/promo-icon.png');
+    background-position: center;
+    background-size: contain;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
 }
 
 .block-categories {
@@ -231,6 +233,11 @@ form.connection-form {
 
 .categorie-list select{
     border-radius: 10px 0 0 10px;
+}
+
+.categorie-list select:active,
+.categorie-list .btn:active {
+    box-shadow: none;
 }
 
 .categorie-list .btn{
