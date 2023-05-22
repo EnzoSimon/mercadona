@@ -24,7 +24,7 @@
                 {% set discount = null %}
                 {% if selectedCategory is empty or product.categories.id == selectedCategory %}
                     {% for promotion in promotions %}
-                        {% if promotion.startDate <= 'now'|date('Y-m-d') and promotion.endDate >= 'now'|date('Y-m-d') and promotion.product.id == product.id %}
+                        {% if promotion.product.id == product.id %}
                             {% set discount = promotion %}
                         {% endif %}
                     {% endfor %}
@@ -38,7 +38,7 @@
                                 <h2 class="card-field card-title">{{ product.name }}</h2>
                                 <p class="card-field card-text">{{ product.description }}</p>
                                 {% if discount is not empty %}
-                                    <p class="card-field card-price">Prix : <s>{{ product.price }}</s> &#x2794; <span>{{ product.price - (product.price * discount.discount / 100) }}€ (-{{ discount.discount }}%)</span></p>
+                                    <p class="card-field card-price">Prix : <s>{{ promotion.startDate }}</s> &#x2794; <span>{{ product.price - (product.price * discount.discount / 100) }}€ (-{{ discount.discount }}%)</span></p>
                                 {% else %}
                                     <p class="card-field card-price">Prix : {{ product.price }}€</p>
                                 {% endif %}
