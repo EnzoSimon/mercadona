@@ -21,10 +21,10 @@
 
         <div class="row justify-content-center">
             {% for product in products %}
+                {% set discount = null %}
                 {% if selectedCategory is empty or product.categories.id == selectedCategory %}
-                    {% set discount = null %}
                     {% for promotion in promotions %}
-                        {% if promotion.product.id == product.id and promotion.startDate|date("Y/m/d") <= 'now'|date("Y/m/d") and promotion.endDate|date("Y/m/d") >= 'now'|date("Y/m/d") %}
+                        {% if promotion.startDate <= 'now' and promotion.endDate >= 'now' and promotion.product.id == product.id %}
                             {% set discount = promotion %}
                         {% endif %}
                     {% endfor %}
