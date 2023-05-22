@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Categories;
 use App\Entity\Products;
 use App\Entity\Promotions;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,10 +19,12 @@ class ProductsController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $products = $entityManager->getRepository(Products::class)->findAll();
         $promotions = $entityManager->getRepository(Promotions::class)->findAll();
+        $categories = $entityManager->getRepository(Categories::class)->findAll();
 
         return $this->render('products/index.html.twig', [
             'products' => $products,
             'promotions' => $promotions,
+            'categories' => $categories,
         ]);
     }
 
