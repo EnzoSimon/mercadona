@@ -132,19 +132,19 @@ class PromotionsController extends AbstractController
     //     // ['promotionForm' => $promotionForm]
     // }
 
-    // #[Route('/suppression/{id}', name: 'delete')]
-    // public function delete(Products $product, EntityManagerInterface $em): Response
-    // {
-    //     // On vérifie si l'utilisateur peut supprimer avec le Voter
-    //     $this->denyAccessUnlessGranted('PRODUCT_DELETE', $product);
+    #[Route('/suppression/{id}', name: 'delete')]
+    public function delete(Promotions $promotion, EntityManagerInterface $em): Response
+    {
+        // On vérifie si l'utilisateur peut supprimer avec le Voter
+        $this->denyAccessUnlessGranted('PRODUCT_DELETE', $promotion);
 
-    //     // Supprimer le produit de la base de données
-    //     $em->remove($product);
-    //     $em->flush();
+        // Supprimer le produit de la base de données
+        $em->remove($promotion);
+        $em->flush();
 
-    //     $this->addFlash('success', 'Produit supprimé avec succès');
+        $this->addFlash('success', 'Produit supprimé avec succès');
 
-    //     // Rediriger vers la liste des produits ou une autre page appropriée
-    //     return $this->redirectToRoute('admin_products_index');
-    // }
+        // Rediriger vers la liste des produits ou une autre page appropriée
+        return $this->redirectToRoute('admin_products_index');
+    }
 }

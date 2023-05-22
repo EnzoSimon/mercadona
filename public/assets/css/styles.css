@@ -227,22 +227,23 @@ form.connection-form {
     margin: 15px;
 }
 
-.admin th {
+th {
     text-align: center;
 }
 
-.admin th,
-.admin td {
+th,
+td {
     border-right: solid 1px #a7a7a7;
     vertical-align: middle;
 }
 
-.admin th:last-child,
-.admin td:last-child {
+th:last-child,
+td:last-child {
     border-right: none;
 }
 
-.admin tr:last-child {
+tr:last-child,
+tbody {
     border-style: none;
 }
 
