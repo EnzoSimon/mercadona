@@ -35,12 +35,12 @@ class PromotionsFormType extends AbstractType
             ->add('start_date', DateType::class, [
                 'label' => 'Date de début de la promotion',
                 'widget' => 'single_text',
-                'format' => 'dd-MM-yyyy',
+                'format' => 'yyyy-MM-dd',
             ])
             ->add('end_date', DateType::class, [
                 'label' => 'Date de fin de la promotion',
                 'widget' => 'single_text',
-                'format' => 'dd-MM-yyyy',
+                'format' => 'yyyy-MM-dd',
             ]);
     }
 
