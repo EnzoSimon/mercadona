@@ -9,17 +9,27 @@
                 <h1>Nos {{ category.name|lower }}</h1>
             </div>
             <div class="row justify-content-center">
-            {% for product in products.data %}
+            {% for product in products %}
+                {% set discount = null %}
+                {% for promotion in promotions %}
+                    {% if promotion.startDate|date('Y-m-d') <= 'now'|date('Y-m-d') and promotion.endDate|date('Y-m-d') >= 'now'|date('Y-m-d') and promotion.product.id == product.id %}
+                        {% set discount = promotion %}
+                    {% endif %}
+                {% endfor %}
+                
                 <div class="col-3 mb-3">
-                    <article class="card h-100">
+                    <article class="card {% if discount is not empty %}promo{% endif %} h-100">
                         {% if product.images is not empty %}
                             <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ product.images[0].name ) }}" class="card-img-top" alt="{{ product.name }}">
                         {% endif %}
                         <div class="card-body">
-                            <h2 class="card-field card-title">{{ product.name }}</h2>
+                            {% if discount is not empty %}
+                                <p class="card-field card-price">Prix : <s>{{ product.price }}</s> &#x2794; <span>{{ product.price - (product.price * discount.discount / 100) }}€ (-{{ discount.discount }}%)</span></p>
+                            {% else %}
+                                <p class="card-field card-price">Prix : {{ product.price }}€</p>
+                            {% endif %}
+                            <h4 class="card-field card-title">{{ product.name }}</h4>
                             <p class="card-field card-text">{{ product.description }}</p>
-                            <p class="card-field card-price">Prix : {{ product.price / 100 }}€</p>
-                            {# <a href="{{ path('products_details', {"slug": product.slug }) }}" class="btn btn-primary">Voir les détails</a> #}
                         </div>
                     </article>
                 </div>

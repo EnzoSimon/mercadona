@@ -25,11 +25,11 @@ header {
 }
 
 body.page main {
-    min-height: calc(100vh - 114px);
+    min-height: calc(100vh - 130px);
 }
 
 body.home-page main {
-    min-height: calc(100vh - 464px);
+    min-height: calc(100vh - 480px);
 }
 
 h1,
@@ -192,6 +192,12 @@ h4 {
     top: 5px;
     left: 5px;
     z-index: 1;
+    transition: 0.3s
+}
+
+.card.promo:hover::before {
+    top: 20px;
+    transform: rotate(30deg);
 }
 
 .block-categories {
