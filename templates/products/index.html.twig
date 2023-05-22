@@ -10,7 +10,7 @@
             {% for product in products %}
                 {% set promotion = null %}
                 {% for promo in promotions %}
-                    {% if promo.products.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %}
+                    {% if promo.product.id == product.id and promo.start_date|date("m/d/Y") <= 'now'|date("m/d/Y") and promo.end_date|date("m/d/Y") >= 'now'|date("m/d/Y") %}
                         {% set promotion = promo %}
                     {% endif %}
                 {% endfor %}
