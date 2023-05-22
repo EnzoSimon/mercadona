@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 
-#[Route('/admin/produits', name: 'admin_products_')]
+#[Route('/admin/promotion', name: 'admin_promotion_')]
 class PromotionsController extends AbstractController
 {
     #[Route('/', name: 'index')]
@@ -27,7 +27,7 @@ class PromotionsController extends AbstractController
         return $this->render('admin/products/index.html.twig', compact('produits'));
     }
 
-    #[Route('/promotion_add', name: 'promotion_add')]
+    #[Route('/add/{id}', name: 'add')]
     public function add(Request $request, EntityManagerInterface $em, SluggerInterface $slugger, PictureService $pictureService): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
