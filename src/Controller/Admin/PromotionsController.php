@@ -5,8 +5,10 @@ namespace App\Controller\Admin;
 use App\Entity\Images;
 use App\Entity\Products;
 use App\Entity\Promotions;
+use App\Entity\PromotionsFormType;
 use App\Form\ProductsFormType;
 use App\Repository\ProductsRepository;
+use App\Repository\PromotionsRepository;
 use App\Service\PictureService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -35,7 +37,7 @@ class ProductsController extends AbstractController
         $promotion = new Promotions();
 
         // On crée le formulaire
-        $promotionForm = $this->createForm(ProductsFormType::class, $promotion);
+        $promotionForm = $this->createForm(PromotionsFormType::class, $promotion);
 
         // On traite la requête du formulaire
         $promotionForm->handleRequest($request);
