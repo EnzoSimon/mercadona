@@ -147,6 +147,11 @@ h4 {
     margin: auto;
 }
 
+.card.promo .card-price {
+    font-weight: bold;
+    color: red;
+}
+
 .block-categories {
     margin-bottom: 100px;
 }
