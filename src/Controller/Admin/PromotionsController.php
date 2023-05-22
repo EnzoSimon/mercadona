@@ -6,6 +6,8 @@ use App\Entity\Images;
 use App\Entity\Products;
 use App\Entity\Promotions;
 use App\Entity\PromotionsFormType;
+use App\Form\ProductsFormType;
+use App\Form\PromotionsFormType as FormPromotionsFormType;
 use App\Repository\ProductsRepository;
 use App\Repository\PromotionsRepository;
 use App\Service\PictureService;
@@ -36,7 +38,7 @@ class PromotionsController extends AbstractController
         $promotion = new Promotions();
 
         // On crée le formulaire
-        $promotionForm = $this->createForm(PromotionsFormType::class, $promotion);
+        $promotionForm = $this->createForm(FormPromotionsFormType::class, $promotion);
 
         // On traite la requête du formulaire
         $promotionForm->handleRequest($request);
