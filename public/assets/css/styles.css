@@ -180,7 +180,8 @@ h2 {
 }
 
 .card.promo {
-    background-color: #fffce6;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 75%, rgba(255,229,203,1) 100%);
 }
 
 .card .card-price {
@@ -213,9 +214,9 @@ h2 {
 }
 
 .card.promo:hover::before {
-    left: 15px;
-    transform: rotate(20deg);
-    scale: 1.1;
+    left: 10px;
+    transform: rotate(30deg);
+    scale: 1.15;
 }
 
 .block-categories {
