@@ -140,9 +140,6 @@ class ProductsController extends AbstractController
             'productForm' => $productForm->createView(),
             'product' => $product
         ]);
-
-        // return $this->renderForm('admin/products/edit.html.twig', compact('productForm'));
-        // ['productForm' => $productForm]
     }
 
     #[Route('/suppression/{id}', name: 'delete')]

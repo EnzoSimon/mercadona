@@ -60,13 +60,7 @@ class PromotionsController extends AbstractController
             return $this->redirectToRoute('admin_products_index');
         }
 
-
-        // return $this->render('admin/products/add.html.twig',[
-        //     'promotionForm' => $promotionForm->createView()
-        // ]);
-
         return $this->renderForm('admin/products/promotions/add.html.twig', compact('promotionForm'));
-        // ['promotionForm' => $promotionForm]
     }
 
     #[Route('/delete/{id}', name: 'delete')]
