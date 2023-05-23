@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Images;
 use App\Entity\Products;
+use App\Entity\Promotions;
 use App\Form\ProductsFormType;
 use App\Repository\ProductsRepository;
 use App\Service\PictureService;
