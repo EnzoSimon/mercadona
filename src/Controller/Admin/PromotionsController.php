@@ -2,17 +2,13 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Images;
 use App\Entity\Products;
 use App\Entity\Promotions;
 use App\Form\PromotionsFormType;
-use App\Form\ProductsFormType;
 use App\Repository\ProductsRepository;
-use App\Repository\PromotionsRepository;
 use App\Service\PictureService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -73,21 +69,16 @@ class PromotionsController extends AbstractController
         // ['promotionForm' => $promotionForm]
     }
 
-    #[Route('/suppression/{id}', name: 'delete')]
-    public function delete(Promotions $promotion, EntityManagerInterface $em, Products $product): Response
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(Promotions $promotion, EntityManagerInterface $em): Response
     {
-        // On vérifie si l'utilisateur peut supprimer avec le Voter
-        $this->denyAccessUnlessGranted('ROLE_ADMIN', $promotion);
-
-        $promotion->setProduct($product);
-
-        // Supprimer le produit de la base de données
+        // Supprimer la promotion de la base de données
         $em->remove($promotion);
         $em->flush();
 
         $this->addFlash('success', 'Promotion supprimée avec succès');
 
         // Rediriger vers la liste des produits ou une autre page appropriée
-        return $this->redirectToRoute('admin_categories_index');
+        return $this->redirectToRoute('admin_products_index');
     }
 }

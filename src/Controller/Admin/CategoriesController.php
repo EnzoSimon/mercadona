@@ -44,10 +44,6 @@ class CategoriesController extends AbstractController
             $slug = $slugger->slug($categorie->getName());
             $categorie->setSlug($slug);
 
-            // On arrondit le prix 
-            // $prix = $product->getPrice() * 100;
-            // $product->setPrice($prix);
-
             // On stocke
             $em->persist($categorie);
             $em->flush();
