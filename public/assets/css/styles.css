@@ -320,6 +320,12 @@ tbody {
     opacity: 1;
 }
 
+.socials {
+    margin: 20px 0; 
+    display: flex;
+    justify-content: center;
+}
+
 .social-item {
-    margin: 10px 30px; 
+    margin: 0 30px; 
 }
