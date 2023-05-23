@@ -47,6 +47,11 @@ h2 {
     height: 100%
 }
 
+.btn:active,
+.btn:focus {
+    box-shadow: none;
+}
+
 .btn-primary {
     background: #fbba16;
     border-color: #fbba16;
@@ -273,6 +278,7 @@ tbody {
 .categorie-list {
     max-width: 230px;
     margin-left: auto;
+    margin-right: none;
     display: flex;
     align-items: flex-end;
     margin-bottom: 30px;
