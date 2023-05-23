@@ -26,7 +26,7 @@ class ProductsController extends AbstractController
         $entityManager = $managerRegistry->getManager();
         $promotions = $entityManager->getRepository(Promotions::class)->findAll();
         $produits = $productsRepository->findAll();
-        return $this->render('admin/products/index.html.twig', compact('produits'));
+        return $this->render('admin/products/index.html.twig', compact('produits', 'promotions'));
     }
 
     #[Route('/ajout', name: 'add')]
