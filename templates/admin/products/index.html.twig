@@ -38,7 +38,7 @@
                                     <a href="{{ path('admin_promotion_ajout', {id: produit.id})}}" class="btn btn-warning">Promotion</a>
                                     {% set discount = null %}
                                     {% for promotion in promotions %}
-                                        {% if promotion.product == produit.id %}
+                                        {% if promotion.product == produit %}
                                             {% set discount = promotion %}
                                         {% endif %}
                                     {% endfor %}
