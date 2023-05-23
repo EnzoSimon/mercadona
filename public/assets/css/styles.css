@@ -298,3 +298,23 @@ tbody {
 .categorie-list .btn{
     border-radius: 0 10px 10px 0;
 }
+
+.img-container {
+    position: relative;
+    margin: auto;
+    width: fit-content;
+}
+
+.img-container a {
+    width: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.img-container:hover a {
+    opacity: 1;
+}

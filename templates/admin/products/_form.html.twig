@@ -9,10 +9,9 @@
     {# On affiche les images si on est en édition #}
     {% if app.request.attributes.get('_route') == 'admin_products_edit' %}
         {% for image in product.images %}
-            <div>
+            <div class="img-container">
                 <img src="{{ asset('assets/uploads/products/mini/300x300-' ~ image.name ) }}" alt="Image" width="150">
-                    <a href="{{ path('admin_products_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}" class="btn btn-danger">Retirer l'image</a>
-                </img>
+                <a href="{{ path('admin_products_delete_image', {id: image.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ image.id) }}" class="btn btn-danger">Retirer l'image</a>
             </div>
         {% endfor %}
     {% endif %}
