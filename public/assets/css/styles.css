@@ -52,7 +52,9 @@ h2 {
     border-color: #fbba16;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
     background-color: #d99f0d;
     border-color: #d99f0d;
 }
@@ -62,7 +64,9 @@ h2 {
     border-color: #957d41;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
     background: #7e6831;
     border-color: #7e6831;
 }
@@ -217,14 +221,19 @@ h2 {
     padding: 3.5rem 1rem;
 }
 
-form.connection-form {
+form {
     max-width: 500px;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 .admin .card {
     min-width: 230px;
     margin: 15px;
+}
+
+.admin .img-thumbnail {
+    width: 170px;
 }
 
 th {
@@ -274,7 +283,9 @@ tbody {
 }
 
 .categorie-list select:active,
-.categorie-list .btn:active {
+.categorie-list select:focus,
+.categorie-list .btn:active
+.categorie-list .btn:focus {
     box-shadow: none;
 }
 
