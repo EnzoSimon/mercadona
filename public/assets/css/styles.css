@@ -278,7 +278,7 @@ tbody {
 .categorie-list {
     max-width: 230px;
     margin-left: auto;
-    margin-right: none;
+    margin-right: 0;
     display: flex;
     align-items: flex-end;
     margin-bottom: 30px;
