@@ -74,10 +74,12 @@ class PromotionsController extends AbstractController
     }
 
     #[Route('/suppression/{id}', name: 'delete')]
-    public function delete(Promotions $promotion, EntityManagerInterface $em): Response
+    public function delete(Promotions $promotion, EntityManagerInterface $em, Products $product): Response
     {
         // On vérifie si l'utilisateur peut supprimer avec le Voter
         $this->denyAccessUnlessGranted('ROLE_ADMIN', $promotion);
+
+        $promotion->setProduct($product);
 
         // Supprimer le produit de la base de données
         $em->remove($promotion);
