@@ -77,7 +77,7 @@ class PromotionsController extends AbstractController
     public function delete(Promotions $promotion, EntityManagerInterface $em): Response
     {
         // On vérifie si l'utilisateur peut supprimer avec le Voter
-        $this->denyAccessUnlessGranted('PRODUCT_DELETE', $promotion);
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', $promotion);
 
         // Supprimer le produit de la base de données
         $em->remove($promotion);
@@ -86,6 +86,6 @@ class PromotionsController extends AbstractController
         $this->addFlash('success', 'Promotion supprimée avec succès');
 
         // Rediriger vers la liste des produits ou une autre page appropriée
-        return $this->redirectToRoute('admin_products_index');
+        return $this->redirectToRoute('admin_categories_index');
     }
 }
