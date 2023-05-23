@@ -36,7 +36,13 @@
                                     <a href="{{ path('admin_products_edit', {id: produit.id})}}" class="btn btn-success">Modifier</a>
                                     <a href="{{ path('admin_products_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer</a></br></br>
                                     <a href="{{ path('admin_promotion_ajout', {id: produit.id})}}" class="btn btn-warning">Promotion</a>
-                                    {% if promotion.product is not empty %}
+                                    {% set discount = null %}
+                                    {% for promotion in promotions %}
+                                        {% if promotion.product == produit.id %}
+                                            {% set discount = promotion %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if discount is not empty %}
                                         <a href="{{ path('admin_promotion_delete', {id: produit.id})}}" class="btn btn-danger">Supprimer la promotion</a>
                                     {% endif %}
                                 </td>
