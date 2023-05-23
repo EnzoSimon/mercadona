@@ -303,6 +303,7 @@ tbody {
     position: relative;
     margin: auto;
     width: fit-content;
+    margin-bottom: 20px;
 }
 
 .img-container a {
