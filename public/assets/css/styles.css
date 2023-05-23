@@ -319,3 +319,7 @@ tbody {
 .img-container:hover a {
     opacity: 1;
 }
+
+.social-item {
+    margin: 10px 30px; 
+}
